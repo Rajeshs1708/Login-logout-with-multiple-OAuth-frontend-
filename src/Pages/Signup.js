@@ -35,7 +35,7 @@ const Signup = () => {
                             const notify = () => toast.success(`*${res.data.message}*`, { theme: 'colored' });
                             notify()
                             setTimeout(() => {
-                                navigate('/')
+                                navigate('/login')
                             }, 2000)
                         }
                     })

@@ -16,9 +16,9 @@ const Home = ({ user }) => {
     const oauthUser = user
     const token = localStorage.getItem('TOKEN');
     if (!token && !oauthUser) {
-      navigate('/')
+      navigate('/login')
     } else {
-      navigate('/home')
+      navigate('/')
     }
   }, [navigate,user])
 
@@ -33,7 +33,7 @@ const Home = ({ user }) => {
             localStorage.removeItem("NAME");
             localStorage.removeItem("EMAIL");
             setTimeout(() => {
-              navigate('/')
+              navigate('/login')
             }, 1000)
 
           }

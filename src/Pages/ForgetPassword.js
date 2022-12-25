@@ -38,7 +38,7 @@ const ForgetPassword = () => {
                             setError(`${res.data.message}: ${res.data.otp}`)
                             setTimeout(() => {
                                 navigate('/newPassword')
-                            }, 4000)
+                            }, 3000)
                         } else {
                             const notify = () => toast.error(`*${res.data.message}*`, { theme: 'colored' });
                             notify()

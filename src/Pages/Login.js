@@ -40,7 +40,7 @@ const Login = () => {
                             localStorage.setItem('NAME', res.data.user.name)
                             localStorage.setItem('EMAIL', res.data.user.email)
                             setTimeout(() => {
-                                navigate('/home')
+                                navigate('/')
                             }, 3000)
                         }
                     })

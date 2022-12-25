@@ -37,7 +37,7 @@ const NewPassword = () => {
                             notify()
                             setError(`${res.data.message}`)
                             setTimeout(() => {
-                                navigate('/')
+                                navigate('/login')
                             }, 2000)
                         } else {
                             const notify = () => toast.error(`*${res.data.message}*`, { theme: 'colored' });

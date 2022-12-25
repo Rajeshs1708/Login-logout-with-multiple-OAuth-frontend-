@@ -33,8 +33,8 @@ console.log(user);
       <div className="app">
         <Navbar user={user} />
         <Routes>
-          <Route path='/home' element={<Home user={user} />} />
-          <Route path='/' element={user ? <Navigate to='/home' /> : <Login />} />
+          <Route path='/' element={<Home user={user} />} />
+          <Route path='/login' element={user ? <Navigate to='/' /> : <Login />} />
           <Route path='/signup' element={<Signup />} />
           <Route path='/forgetpassword' element={<ForgetPassword />} />
           <Route path='/newPassword' element={<NewPassword />} />

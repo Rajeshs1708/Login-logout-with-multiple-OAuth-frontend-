@@ -28,7 +28,7 @@ function Navbar({ user }) {
                     </ul>
                 ) : (
                     <>
-                        <Link className='link h5' to='/'>Login</Link>
+                        <Link className='link h5' to='/login'>Login</Link>
                     </>
                 )
             }
