@@ -61,7 +61,7 @@ const NewPassword = () => {
 
     return (
         <>
-            <h1 className='loginTitle row'>Choose your Login Method</h1>
+            <h1 className='loginTitle text-center'>Choose your Login Method</h1>
             <div className='login container-fluid'>
                 <div className='wrapper row'>
                     <div className='left col-sm-5'>
