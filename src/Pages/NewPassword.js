@@ -60,41 +60,43 @@ const NewPassword = () => {
     }
 
     return (
-        <div className='login container-fluid'>
+        <>
             <h1 className='loginTitle row'>Choose your Login Method</h1>
-            <div className='wrapper row'>
-                <div className='left col-sm-5'>
-                    <div className='loginButton google' onClick={google}>
-                        <img className='icon' src={Google} alt='Google' />
-                        Google
+            <div className='login container-fluid'>
+                <div className='wrapper row'>
+                    <div className='left col-sm-5'>
+                        <div className='loginButton google' onClick={google}>
+                            <img className='icon' src={Google} alt='Google' />
+                            Google
+                        </div>
+                        <div className='loginButton github' onClick={github}>
+                            <img className='icon' src={Github} alt='Github' />
+                            Github
+                        </div>
+                        <div className='loginButton facebook' onClick={facebook}>
+                            <img className='icon' src={Facebook} alt='Facebook' />
+                            Facebook
+                        </div>
                     </div>
-                    <div className='loginButton github' onClick={github}>
-                        <img className='icon' src={Github} alt='Github' />
-                        Github
+
+                    <div className='center col-sm-2'>
+                        <div className='line' />
+                        <div className='or'>OR</div>
                     </div>
-                    <div className='loginButton facebook' onClick={facebook}>
-                        <img className='icon' src={Facebook} alt='Facebook' />
-                        Facebook
+
+                    <div className='right col-sm-5'>
+                        <form onSubmit={handleSubmit}>
+                            <h5 className='error'>{error}</h5><br />
+                            <input className='mb-4' value={otp} onChange={e => setOtp(e.target.value)} type="text" placeholder='Enter your OTP' required />
+                            <input className='mb-4' value={password} onChange={e => setPassword(e.target.value)} type="password" placeholder='Enter New Password' required />
+                            <button className='submit pink darken-4 white-text btn'>Submit</button>
+                            <ToastContainer autoClose={3000} theme="colored" />
+                        </form>
                     </div>
                 </div>
 
-                <div className='center col-sm-2'>
-                    <div className='line' />
-                    <div className='or'>OR</div>
-                </div>
-
-                <div className='right col-sm-5'>
-                    <form onSubmit={handleSubmit}>
-                        <h5 className='error'>{error}</h5><br />
-                        <input className='mb-4' value={otp} onChange={e => setOtp(e.target.value)} type="text" placeholder='Enter your OTP' required />
-                        <input className='mb-4' value={password} onChange={e => setPassword(e.target.value)} type="password" placeholder='Enter New Password' required />
-                        <button className='submit pink darken-4 white-text btn'>Submit</button>
-                        <ToastContainer autoClose={3000} theme="colored" />
-                    </form>
-                </div>
             </div>
-
-        </div>
+        </>
     )
 }
 

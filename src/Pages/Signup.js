@@ -58,41 +58,43 @@ const Signup = () => {
     }
 
     return (
-        <div className='login container-fluid'>
+        <>
             <h1 className='loginTitle row'>Choose your Login Method</h1>
-            <div className='wrapper row'>
-                <div className='left col-sm-5'>
-                    <div className='loginButton google' onClick={google}>
-                        <img className='icon' src={Google} alt='Google' />
-                        Google
+            <div className='login container-fluid'>
+                <div className='wrapper row'>
+                    <div className='left col-sm-5'>
+                        <div className='loginButton google' onClick={google}>
+                            <img className='icon' src={Google} alt='Google' />
+                            Google
+                        </div>
+                        <div className='loginButton github' onClick={github}>
+                            <img className='icon' src={Github} alt='Github' />
+                            Github
+                        </div>
+                        <div className='loginButton facebook' onClick={facebook}>
+                            <img className='icon' src={Facebook} alt='Facebook' />
+                            Facebook
+                        </div>
                     </div>
-                    <div className='loginButton github' onClick={github}>
-                        <img className='icon' src={Github} alt='Github' />
-                        Github
+
+                    <div className='center col-sm-2'>
+                        <div className='line' />
+                        <div className='or'>OR</div>
                     </div>
-                    <div className='loginButton facebook' onClick={facebook}>
-                        <img className='icon' src={Facebook} alt='Facebook' />
-                        Facebook
+
+                    <div className='right col-sm-5'>
+                        <form onSubmit={handleSubmit}>
+                            <input className='mb-3' value={name} onChange={e => setName(e.target.value)} type="text" placeholder='Username' required /><br />
+                            <input className='mb-3' value={email} onChange={e => setEmail(e.target.value)} type="email" placeholder='Email' required /><br />
+                            <input className='mb-3' value={password} onChange={e => setPassword(e.target.value)} type="password" placeholder='Password' required />
+                            <button className='submit pink darken-4 white-text btn'>Signup</button>
+                            <ToastContainer hideProgressBar={true} />
+                        </form>
                     </div>
                 </div>
 
-                <div className='center col-sm-2'>
-                    <div className='line' />
-                    <div className='or'>OR</div>
-                </div>
-
-                <div className='right col-sm-5'>
-                    <form onSubmit={handleSubmit}>
-                        <input className='mb-3' value={name} onChange={e => setName(e.target.value)} type="text" placeholder='Username' required /><br />
-                        <input className='mb-3' value={email} onChange={e => setEmail(e.target.value)} type="email" placeholder='Email' required /><br />
-                        <input className='mb-3' value={password} onChange={e => setPassword(e.target.value)} type="password" placeholder='Password' required />
-                        <button className='submit pink darken-4 white-text btn'>Signup</button>
-                        <ToastContainer hideProgressBar={true} />
-                    </form>
-                </div>
             </div>
-
-        </div>
+        </>
     )
 }
 

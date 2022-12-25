@@ -62,40 +62,42 @@ const ForgetPassword = () => {
     }
 
     return (
-        <div className='login container-fluid'>
+        <>
             <h1 className='loginTitle row'>Choose your Login Method</h1>
-            <div className='wrapper row'>
-                <div className='left col-sm-5'>
-                    <div className='loginButton google' onClick={google}>
-                        <img className='icon' src={Google} alt='Google' />
-                        Google
+            <div className='login container-fluid'>
+                <div className='wrapper row'>
+                    <div className='left col-sm-5'>
+                        <div className='loginButton google' onClick={google}>
+                            <img className='icon' src={Google} alt='Google' />
+                            Google
+                        </div>
+                        <div className='loginButton github' onClick={github}>
+                            <img className='icon' src={Github} alt='Github' />
+                            Github
+                        </div>
+                        <div className='loginButton facebook' onClick={facebook}>
+                            <img className='icon' src={Facebook} alt='Facebook' />
+                            Facebook
+                        </div>
                     </div>
-                    <div className='loginButton github' onClick={github}>
-                        <img className='icon' src={Github} alt='Github' />
-                        Github
+
+                    <div className='center col-sm-2'>
+                        <div className='line' />
+                        <div className='or'>OR</div>
                     </div>
-                    <div className='loginButton facebook' onClick={facebook}>
-                        <img className='icon' src={Facebook} alt='Facebook' />
-                        Facebook
+
+                    <div className='right col-sm-5'>
+                        <form onSubmit={handleSubmit}>
+                            <p className='error text-center mb-3'>{error}</p>
+                            <input className='mb-4' title='Please go to console for OTP' value={email} onChange={e => setEmail(e.target.value)} type="email" placeholder='Email' required />
+                            <button className='submit pink darken-4 white-text btn'>Send OTP</button>
+                            <ToastContainer autoClose={3000} theme="colored" />
+                        </form>
                     </div>
                 </div>
 
-                <div className='center col-sm-2'>
-                    <div className='line' />
-                    <div className='or'>OR</div>
-                </div>
-
-                <div className='right col-sm-5'>
-                    <form onSubmit={handleSubmit}>
-                        <p className='error text-center mb-3'>{error}</p>
-                        <input className='mb-4' title='Please go to console for OTP' value={email} onChange={e => setEmail(e.target.value)} type="email" placeholder='Email' required />
-                        <button className='submit pink darken-4 white-text btn'>Send OTP</button>
-                        <ToastContainer autoClose={3000} theme="colored" />
-                    </form>
-                </div>
             </div>
-
-        </div>
+        </>
     )
 }
 
