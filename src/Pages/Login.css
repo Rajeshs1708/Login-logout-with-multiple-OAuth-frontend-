@@ -1,0 +1,95 @@
+.login {
+    height: calc(100vh - 180px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 20px;
+}
+
+.left {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.right{
+    padding: 10px;
+}
+.center {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.or {
+    border: 2px solid lightgray;
+    border-radius: 50%;
+    padding: 10px;
+    margin: 20px;
+    color: gray;
+    background-color: white;
+    font-weight: bold;
+}
+
+.line {
+    width: 2px;
+    background-color: lightgray;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    margin: auto;
+    z-index: -1;
+}
+
+.loginButton {
+    width: 290px;
+    padding: 10px 25px;
+    border-radius: 5px;
+    color: white;
+    display: flex;
+    align-items: center;
+    font-weight: bold;
+    margin-bottom: 20px;
+    cursor: pointer;
+}
+
+.google {
+    background-color: #df4930;
+}
+
+.facebook {
+    background-color: #3b5998;
+}
+
+.github {
+    background-color: black;
+}
+
+.icon {
+    width: 20px;
+    height: 20px;
+    margin-right: 20px;
+}
+
+.loginTitle {
+    padding-top: 20px;
+    padding-bottom: 20px;
+   
+    color: lightgray;
+}
+.error{
+    background-color: green;
+    color: white;
+}

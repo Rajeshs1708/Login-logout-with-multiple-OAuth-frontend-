@@ -1,0 +1,12 @@
+.home {
+    display: flex;
+    padding: 50px 50px;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.topic {
+    color: #FFFFFF;
+    background: #b8b8b8;
+    text-shadow: 4px 3px 0 #7A7A7A;
+}
