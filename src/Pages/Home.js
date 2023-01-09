@@ -21,7 +21,7 @@ const Home = ({ user }) => {
     } else {
       navigate('/')
     }
-  }, [navigate,user])
+  }, [navigate])
 
   const handleLogout = () => {
     try {
