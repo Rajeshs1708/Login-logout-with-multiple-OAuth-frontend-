@@ -18,7 +18,7 @@ const Login = () => {
     const [password, setPassword] = useState('');
 
     const google = () => {
-        window.open(`https://login-with-oauth.netlify.app/auth/google`, "_self")
+        window.open(`${process.env.REACT_APP_BASE_URL}/auth/google`, "_self")
     }
     const github = () => {
         window.open(`${process.env.REACT_APP_BASE_URL}/auth/github`, "_self")
