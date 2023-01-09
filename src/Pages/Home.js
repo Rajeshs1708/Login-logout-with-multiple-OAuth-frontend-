@@ -1,4 +1,5 @@
-import React,{useEffect} from 'react';
+// import React,{useEffect} from 'react';
+import React from 'react';
 import './Home.css';
 import axios from 'axios';
 import { posts } from '../data';
@@ -12,15 +13,15 @@ const Home = ({ user }) => {
 
   const navigate = useNavigate();
 
-  useEffect(() => {
-    const oauthUser = user
-    const token = localStorage.getItem('TOKEN');
-    if (!token && !oauthUser) {
-      navigate('/login')
-    } else {
-      navigate('/')
-    }
-  }, [navigate,user])
+  // useEffect(() => {
+  //   const oauthUser = user
+  //   const token = localStorage.getItem('TOKEN');
+  //   if (!token && !oauthUser) {
+  //     navigate('/login')
+  //   } else {
+  //     navigate('/')
+  //   }
+  // }, [navigate,user])
 
   const handleLogout = () => {
     try {
