@@ -27,8 +27,10 @@ function App() {
     }
     getUser();
   }, []);
+
 console.log(user);
-  return (
+  
+return (
     <Router >
       <div className="app">
         <Navbar user={user} />
