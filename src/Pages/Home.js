@@ -50,18 +50,18 @@ const Home = ({ user }) => {
   }
   return (
     <>
-      <div className='row'>
+      <div className=''>
         <p className='h5 text-center'>Welcome : {localStorage.getItem('NAME')}</p>
-        <button className='btn btn-info pe-4' title="This is for input logout" onClick={handleLogout}>Logout</button>
+        <button className='btn pe-4' style={{backgroundColor:"#ADD8E6"}} title="This is for input logout" onClick={handleLogout}>Logout</button>
         <ToastContainer autoClose={3000} theme="colored" />
       </div>
 
-      <div className='row text-center'>
-        <h4>Most popular wonders of the world</h4>
+      <div className='text-center'>
+        <h4 className='text-center display-6'>Most popular wonders of the world</h4>
         <Charts />
       </div>
 
-      <div className='home row'>
+      <div className='home'>
         <p className='text-center display-6 topic'>7 Wonders of the world</p>
         {
           posts.map(post => (
