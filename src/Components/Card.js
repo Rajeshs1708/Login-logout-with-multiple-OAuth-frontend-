@@ -15,7 +15,7 @@ const Card = ({ post }) => {
             const notify = () => toast.success("Added to favourite", { autoClose: 3000, theme: "colored", });
             notify()
         }else{
-            const notify = () => toast.success("Removed to favourite", { autoClose: 3000, theme: "colored", });
+            const notify = () => toast.error("Removed to favourite", { autoClose: 3000, theme: "colored", });
             notify()
         }
     }
