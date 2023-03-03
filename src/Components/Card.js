@@ -23,7 +23,7 @@ const Card = ({ post }) => {
     return (
         <div className='card text-center col-sm-12 col-md-6 col-lg-4'>
             <span className='title h4'>{post.title}</span>
-            <img className='img img-fluid mx-auto d-block' alt={post.alt} src={post.img} />
+            <img className='img img-fluid mx-auto' alt={post.alt} src={post.img} />
             <p style={{ whiteSpace: "nowrap", overflow: "hidden", textOverflow: "ellipsis" }}>{post.desc}</p>
             <div className='favourite'>
                 <Link to={`/post/${post.id}`} className='link' ><button className='cardButton'>Read More</button></Link>
