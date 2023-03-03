@@ -21,8 +21,8 @@ const Card = ({ post }) => {
     }
 
     return (
-        <div className='card col-sm-12 col-md-6 col-lg-4'>
-            <span className='title   text-center h4'>{post.title}</span>
+        <div className='card text-center col-sm-12 col-md-6 col-lg-4'>
+            <span className='title h4'>{post.title}</span>
             <img className='img text-center' alt={post.alt} src={post.img} />
             <p style={{ whiteSpace: "nowrap", overflow: "hidden", textOverflow: "ellipsis" }}>{post.desc}</p>
             <div className='favourite'>
