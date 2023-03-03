@@ -27,7 +27,7 @@ const Card = ({ post }) => {
             <p style={{ whiteSpace: "nowrap", overflow: "hidden", textOverflow: "ellipsis" }}>{post.desc}</p>
             <div className='favourite'>
                 <Link to={`/post/${post.id}`} className='link' ><button className='cardButton'>Read More</button></Link>
-                <HeartFill style={{color:`${color?"#E75480":""}`}} size={20} onClick={handleChange} />
+                <HeartFill style={{color:`${color?"#E75480":""}`,cursor:"pointer"}} size={20} onClick={handleChange} />
                 <ToastContainer autoClose={3000} theme="colored" position="top-center" />
             </div>
         </div>
