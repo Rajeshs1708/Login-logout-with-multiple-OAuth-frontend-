@@ -12,10 +12,10 @@ const Card = ({ post }) => {
     const handleChange=()=>{
         setColor(color=>!color)
         if(!color){
-            const notify = () => toast.success("Added to favourite", { autoClose: 3000, theme: "colored", });
+            const notify = () => toast.success("Added to favourite", {position: "top-center", autoClose: 3000, theme: "colored", });
             notify()
         }else{
-            const notify = () => toast.error("Removed to favourite", { autoClose: 3000, theme: "colored", });
+            const notify = () => toast.error("Removed to favourite", {position: "top-center", autoClose: 3000, theme: "colored", });
             notify()
         }
     }
@@ -28,6 +28,7 @@ const Card = ({ post }) => {
             <div className='favourite'>
                 <Link to={`/post/${post.id}`} className='link' ><button className='cardButton'>Read More</button></Link>
                 <HeartFill style={{color:`${color?"#E75480":""}`}} size={20} onClick={handleChange} />
+                <ToastContainer autoClose={3000} theme="colored" position="top-center" />
             </div>
         </div>
 
