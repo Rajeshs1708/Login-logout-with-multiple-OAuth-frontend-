@@ -1,7 +1,7 @@
 import React from 'react'
 import './Navbar.css'
 import { Link } from 'react-router-dom'
-import { Search } from "react-bootstrap-icons";
+import { SearchHeart } from "react-bootstrap-icons";
 
 
 function Navbar ({ user }) {
@@ -11,7 +11,7 @@ function Navbar ({ user }) {
 
   return (
     <div className='navbar d-flex align-items-center justify-content-around text-white'>
-      <span className='logo'>Find Articles  <Search /></span>
+      <span className='logo'>Find Articles  <SearchHeart /></span>
       {user ? (
         <ul className='list d-flex align-items-center list-unstyled'>
           <li className='listItem  text-center pe-2'>

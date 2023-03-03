@@ -1,6 +1,6 @@
 .home {
     display: flex;
-    padding: 50px 50px;
+    padding: 30px 30px;
     justify-content: space-between;
     flex-wrap: wrap;
 }

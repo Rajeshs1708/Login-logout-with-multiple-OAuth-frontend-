@@ -65,8 +65,8 @@ const Home = ({ user }) => {
           <ToastContainer autoClose={3000} theme='colored' />
         </div>
 
-        <div className='row text-center'>
-          <h4>Most popular wonders of the world</h4>
+        <div className='row'>
+          <h4 className='text-center display-6'>Most popular wonders of the world</h4>
           <Charts />
         </div>
 
