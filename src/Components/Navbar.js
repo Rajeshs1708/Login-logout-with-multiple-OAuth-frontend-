@@ -1,8 +1,7 @@
 import React from 'react'
 import './Navbar.css'
 import { Link } from 'react-router-dom'
-import { SearchHeart } from "react-bootstrap-icons";
-
+import { BoxArrowLeft, Person, SearchHeart } from 'react-bootstrap-icons'
 
 function Navbar ({ user }) {
   const logout = () => {
@@ -11,21 +10,17 @@ function Navbar ({ user }) {
 
   return (
     <div className='navbar d-flex align-items-center justify-content-around text-white'>
-      <span className='logo'>Find Articles  <SearchHeart className='searchIcon' /></span>
+      <span className='logo'>
+        Find Articles <SearchHeart className='searchIcon' />
+      </span>
       {user ? (
         <ul className='list d-flex align-items-center list-unstyled'>
-          <li className='listItem  text-center pe-2'>
-            <span className='material-symbols-outlined'>person</span>
-          </li>
-          <li className='listItem text-center pe-4'>{user.name}</li>
-          <li className='listItem  text-center pe-2'>
-            <span className='material-symbols-outlined'>logout</span>
-          </li>
+          <li className='listItem text-center pe-4'><Person />{user.name}</li>
           <li
             className='listItem text-center pe-4'
             title='This is for OAuth'
             onClick={logout}
-          >
+          ><BoxArrowLeft />
             Logout
           </li>
         </ul>
