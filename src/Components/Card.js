@@ -3,7 +3,7 @@ import './Card.css';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { Link } from 'react-router-dom';
-import { Heart } from "react-bootstrap-icons";
+import { HeartFill } from "react-bootstrap-icons";
 
 
 const Card = ({ post }) => {
@@ -11,7 +11,7 @@ const Card = ({ post }) => {
 
     const handleChange=()=>{
         setColor(color=>!color)
-        if(color){
+        if(!color){
             const notify = () => toast.success("Added to favourite", { autoClose: 3000, theme: "colored", });
             notify()
         }else{
@@ -27,7 +27,7 @@ const Card = ({ post }) => {
             <p style={{ whiteSpace: "nowrap", overflow: "hidden", textOverflow: "ellipsis" }}>{post.desc}</p>
             <div className='favourite'>
                 <Link to={`/post/${post.id}`} className='link' ><button className='cardButton'>Read More</button></Link>
-                <Heart style={{backgroundColor:`${color?"#E75480":""}`}} size={20} onClick={handleChange} />
+                <HeartFill style={{color:`${color?"#E75480":""}`}} size={20} onClick={handleChange} />
             </div>
         </div>
 
