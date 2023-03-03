@@ -14,7 +14,7 @@ const Card = ({ post }) => {
             <p style={{ whiteSpace: "nowrap", overflow: "hidden", textOverflow: "ellipsis" }}>{post.desc}</p>
             <div className='favourite'>
                 <Link to={`/post/${post.id}`} className='link' ><button className='cardButton'>Read More</button></Link>
-                <Heart style={{color:`${color?"#E75480":""}`}} size={20} onClick={()=>{setColor(color=>!color)}} />
+                <Heart style={{backgroundColor:`${color?"#E75480":""}`}} size={20} onClick={()=>{setColor(color=>!color)}} />
             </div>
         </div>
 
