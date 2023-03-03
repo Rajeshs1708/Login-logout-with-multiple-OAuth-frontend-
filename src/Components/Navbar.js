@@ -11,7 +11,7 @@ function Navbar ({ user }) {
 
   return (
     <div className='navbar d-flex align-items-center justify-content-around text-white'>
-      <span className='logo'>Find Articles  <SearchHeart /></span>
+      <span className='logo'>Find Articles  <SearchHeart className='searchIcon' /></span>
       {user ? (
         <ul className='list d-flex align-items-center list-unstyled'>
           <li className='listItem  text-center pe-2'>

@@ -2,7 +2,10 @@
     height: auto;
     background-color: #975C8D;
 }
-
+.navbar .searchIcon:hover{
+    font-size: 20px;
+    color: #e90ac4;
+}
 .logo {
     font-size: 23px;
     font-weight: bold;
