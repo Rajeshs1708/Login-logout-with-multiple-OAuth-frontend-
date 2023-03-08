@@ -18,11 +18,11 @@ function Navbar ({ user }) {
       <span className='logo'>
         Find Articles <SearchHeart className='searchIcon' />
       </span>
-      {localStorage.getItem('NAME')? (
+      {user? (
         <ul className='list d-flex align-items-center list-unstyled'>
           <li className='listItem text-center pe-4'>
             <PersonCircle className='bootIcon' />
-            {localStorage.getItem('NAME')}
+            {user}
           </li>
           <li
             className='listItem text-center pe-4'
