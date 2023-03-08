@@ -52,7 +52,6 @@ const Card = ({ post }) => {
           style={{
             color: "lightgray",
             cursor: 'pointer',
-            border: '1px solid gray'
           }}
           onClick={() => {
             setCount(count + 1)
