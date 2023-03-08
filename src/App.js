@@ -16,8 +16,6 @@ function App() {
   const [user, setUser] = useState(null);
 
   useEffect(() => {
-    const name = localStorage.getItem("NAME")
-    setUser(name)
     const getUser = async () => {
       try {
         const url = `${process.env.REACT_APP_BASE_URL}/auth/login/success`
