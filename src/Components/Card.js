@@ -51,7 +51,10 @@ const Card = ({ post }) => {
           style={{
             color: "grey",
             cursor: 'pointer',
-            border:"1px solid lightgray"
+            border:"1px solid lightgray",
+            padding:"5px",
+            borderRadius:"5px"
+            
           }}
           onClick={() => {
             setCount(1)
