@@ -1,7 +1,11 @@
 import React from 'react'
 import './Navbar.css'
 import { Link } from 'react-router-dom'
-import { BoxArrowInLeft, PersonCircle, SearchHeart } from 'react-bootstrap-icons'
+import {
+  BoxArrowInLeft,
+  PersonCircle,
+  SearchHeart
+} from 'react-bootstrap-icons'
 
 function Navbar ({ user }) {
   let user2 = {
@@ -11,6 +15,30 @@ function Navbar ({ user }) {
   }
   const logout = () => {
     window.open(`${process.env.REACT_APP_BASE_URL}/auth/logout`, '_self')
+    try {
+      axios
+        .get(`${process.env.REACT_APP_BASE_URL}/api/signout`)
+        .then(res => {
+          if (res) {
+            const notify = () =>
+              toast.success(`*${res.data.message}*`, { theme: 'colored' })
+            notify()
+            localStorage.removeItem('TOKEN')
+            localStorage.removeItem('NAME')
+            localStorage.removeItem('EMAIL')
+            setTimeout(() => {
+              navigate('/login')
+            }, 1000)
+          }
+        })
+        .catch(err => {
+          const notify = () =>
+            toast.error(`*${err.response.data.message}*`, { theme: 'colored' })
+          notify()
+        })
+    } catch (err) {
+      console.log('Error...', err)
+    }
   }
 
   return (
@@ -21,7 +49,7 @@ function Navbar ({ user }) {
       {user || user2 ? (
         <ul className='list d-flex align-items-center list-unstyled'>
           <li className='listItem text-center pe-4'>
-            <PersonCircle />
+            <PersonCircle className='bootIcon' />
             {user2.name}
           </li>
           <li
@@ -29,7 +57,8 @@ function Navbar ({ user }) {
             title='This is for OAuth'
             onClick={logout}
           >
-            <BoxArrowInLeft /> Logout</li>
+            <BoxArrowInLeft className='bootIcon' /> Logout
+          </li>
         </ul>
       ) : (
         <>

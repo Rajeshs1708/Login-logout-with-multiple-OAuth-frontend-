@@ -21,36 +21,36 @@ const Home = ({ user }) => {
     }
   }, [navigate, user])
 
-  const handleLogout = () => {
-    try {
-      axios
-        .get(`${process.env.REACT_APP_BASE_URL}/api/signout`)
-        .then(res => {
-          if (res) {
-            const notify = () =>
-              toast.success(`*${res.data.message}*`, { theme: 'colored' })
-            notify()
-            localStorage.removeItem('TOKEN')
-            localStorage.removeItem('NAME')
-            localStorage.removeItem('EMAIL')
-            setTimeout(() => {
-              navigate('/login')
-            }, 1000)
-          }
-        })
-        .catch(err => {
-          const notify = () =>
-            toast.error(`*${err.response.data.message}*`, { theme: 'colored' })
-          notify()
-        })
-    } catch (err) {
-      console.log('Error...', err)
-    }
-  }
+  // const handleLogout = () => {
+  //   try {
+  //     axios
+  //       .get(`${process.env.REACT_APP_BASE_URL}/api/signout`)
+  //       .then(res => {
+  //         if (res) {
+  //           const notify = () =>
+  //             toast.success(`*${res.data.message}*`, { theme: 'colored' })
+  //           notify()
+  //           localStorage.removeItem('TOKEN')
+  //           localStorage.removeItem('NAME')
+  //           localStorage.removeItem('EMAIL')
+  //           setTimeout(() => {
+  //             navigate('/login')
+  //           }, 1000)
+  //         }
+  //       })
+  //       .catch(err => {
+  //         const notify = () =>
+  //           toast.error(`*${err.response.data.message}*`, { theme: 'colored' })
+  //         notify()
+  //       })
+  //   } catch (err) {
+  //     console.log('Error...', err)
+  //   }
+  // }
   return (
     <>
       <div className='container-fluid'>
-        <div className='row'>
+        {/* <div className='row'>
           <p className='h5 text-center'>
             Welcome : {localStorage.getItem('NAME')}
           </p>
@@ -63,7 +63,7 @@ const Home = ({ user }) => {
             Logout
           </button>
           <ToastContainer autoClose={3000} theme='colored' />
-        </div>
+        </div> */}
 
         <div className='row'>
           <h4 className='text-center display-6'>Most popular wonders of the world</h4>

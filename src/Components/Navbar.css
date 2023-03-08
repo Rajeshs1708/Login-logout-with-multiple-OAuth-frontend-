@@ -10,7 +10,14 @@
     font-size: 23px;
     font-weight: bold;
 }
-
+.bootIcon{
+    padding-right: 10px;
+    align-self: auto;
+}
+.navbar .bootIcon:hover{
+    font-size: 25px;
+    color: #9cb2ba;
+}
 .link {
     color: inherit;
     text-decoration: none;
