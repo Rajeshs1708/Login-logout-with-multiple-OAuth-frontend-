@@ -47,8 +47,7 @@ function App () {
           <Route path='/' element={<Home user={user} />} />
           <Route
             path='/login'
-            element={<Login />}
-            // element={user ? <Navigate to='/' /> : <Login />}
+            element={user.userDetails.name ? <Navigate to='/' /> : <Login />}
           />
           <Route path='/signup' element={<Signup />} />
           <Route path='/forgetpassword' element={<ForgetPassword />} />

@@ -17,11 +17,11 @@ function Navbar ({ user }) {
       <span className='logo'>
         Find Articles <SearchHeart className='searchIcon' />
       </span>
-      {user.name ? (
+      {user.userDetails.name ? (
         <ul className='list d-flex align-items-center list-unstyled'>
           <li className='listItem text-center pe-4'>
             <PersonCircle className='bootIcon' />
-            {user.name}
+            {user.userDetails.name}
           </li>
           <li
             className='listItem text-center pe-4'
