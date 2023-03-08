@@ -18,7 +18,8 @@ function App() {
   useEffect(() => {
     const getUser = async () => {
       try {
-        const url = `${process.env.REACT_APP_BASE_URL}/auth/login/success`
+        // const url = `${process.env.REACT_APP_BASE_URL}/auth/login/success`
+        const url = `${process.env.REACT_APP_BASE_URL}/api/getUser`
         const { data } = await axios.get(url, { withCredentials: true })
         setUser(data.user)
       } catch (error) {
