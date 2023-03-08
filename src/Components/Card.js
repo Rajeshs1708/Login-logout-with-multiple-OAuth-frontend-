@@ -7,6 +7,7 @@ import { HeartFill } from 'react-bootstrap-icons'
 
 const Card = ({ post }) => {
   const [color, setColor] = useState(false)
+  const [count, setCount] = useState(0)
 
   const handleChange = () => {
     setColor(color => !color)
@@ -46,9 +47,25 @@ const Card = ({ post }) => {
         <button className='cardButton'>Read More</button>
       </Link>
       <div className='favourite'>
-        <button className='btn'>Like 0</button>
+        <button
+          className='btn'
+          style={{
+            color: "lightgray",
+            cursor: 'pointer',
+            border: '1px solid gray'
+          }}
+          onClick={() => {
+            setCount(count + 1)
+          }}
+        >
+          Like {count}
+        </button>
         <HeartFill
-          style={{ color: `${color ? '#E75480' : ''}`, cursor: 'pointer',backgroundColor:"white",border:"1px solid gray" }}
+          style={{
+            color: `${color ? '#E75480' : 'white'}`,
+            cursor: 'pointer',
+            border: '1px solid gray'
+          }}
           size={20}
           onClick={handleChange}
         />
