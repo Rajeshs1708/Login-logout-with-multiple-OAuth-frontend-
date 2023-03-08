@@ -17,7 +17,7 @@ function Navbar ({ user }) {
       <span className='logo'>
         Find Articles <SearchHeart className='searchIcon' />
       </span>
-      {user ? (
+      {user.name ? (
         <ul className='list d-flex align-items-center list-unstyled'>
           <li className='listItem text-center pe-4'>
             <PersonCircle className='bootIcon' />
