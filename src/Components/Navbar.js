@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import './Navbar.css'
 import { Link } from 'react-router-dom'
 import {
@@ -17,7 +17,7 @@ function Navbar ({ user }) {
       <span className='logo'>
         Find Articles <SearchHeart className='searchIcon' />
       </span>
-      {user.name ? (
+      {user ? (
         <ul className='list d-flex align-items-center list-unstyled'>
           <li className='listItem text-center pe-4'>
             <PersonCircle className='bootIcon' />
