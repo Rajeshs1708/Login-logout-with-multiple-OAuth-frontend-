@@ -33,7 +33,7 @@ function Navbar ({ user }) {
         </ul>
       ) : (
         <>
-          {localStorage.getItem('TOKEN') ? (
+          {!localStorage.getItem('TOKEN') ? (
             <Link className='link h5' to='/login'>
               Login
             </Link>
