@@ -21,10 +21,12 @@ function App () {
 
   useEffect(() => {
     const getUser = async () => {
-      const userDetails = {user:{
-        name: localStorage.getItem('NAME'),
-        token: localStorage.getItem('TOKEN')
-      }}
+      const userDetails = {
+        user: {
+          name: localStorage.getItem('NAME'),
+          token: localStorage.getItem('TOKEN')
+        }
+      }
       setUser(userDetails.user)
       // try {
       //   const url = `${process.env.REACT_APP_BASE_URL}/auth/login/success`
@@ -47,7 +49,7 @@ function App () {
           <Route path='/' element={<Home user={user} />} />
           <Route
             path='/login'
-            element={user? <Navigate to='/' /> : <Login />}
+            element={user.name ? <Navigate to='/' /> : <Login />}
           />
           <Route path='/signup' element={<Signup />} />
           <Route path='/forgetpassword' element={<ForgetPassword />} />
