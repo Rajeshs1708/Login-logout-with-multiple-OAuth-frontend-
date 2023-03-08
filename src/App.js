@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import './App.css'
-// import axios from 'axios'
+import axios from 'axios'
 import {
   BrowserRouter as Router,
   Routes,
