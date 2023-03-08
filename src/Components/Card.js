@@ -42,10 +42,11 @@ const Card = ({ post }) => {
       >
         {post.desc}
       </p>
+      <Link to={`/post/${post.id}`} className='link'>
+        <button className='cardButton'>Read More</button>
+      </Link>
       <div className='favourite'>
-        <Link to={`/post/${post.id}`} className='link'>
-          <button className='cardButton'>Read More</button>
-        </Link>
+        <button className='btn'>Like 0</button>
         <HeartFill
           style={{ color: `${color ? '#E75480' : ''}`, cursor: 'pointer' }}
           size={20}
