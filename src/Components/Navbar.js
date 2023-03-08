@@ -8,7 +8,6 @@ import {
 } from 'react-bootstrap-icons'
 
 function Navbar ({ user }) {
-
   const logout = () => {
     window.open(`${process.env.REACT_APP_BASE_URL}/auth/logout`, '_self')
   }
@@ -18,7 +17,7 @@ function Navbar ({ user }) {
       <span className='logo'>
         Find Articles <SearchHeart className='searchIcon' />
       </span>
-      {user? (
+      {user ? (
         <ul className='list d-flex align-items-center list-unstyled'>
           <li className='listItem text-center pe-4'>
             <PersonCircle className='bootIcon' />
@@ -34,9 +33,13 @@ function Navbar ({ user }) {
         </ul>
       ) : (
         <>
-          <Link className='link h5' to='/login'>
-            Login
-          </Link>
+          {localStorage.getItem('TOKEN') ? (
+            <Link className='link h5' to='/login'>
+              Login
+            </Link>
+          ) : (
+            <></>
+          )}
         </>
       )}
     </div>
