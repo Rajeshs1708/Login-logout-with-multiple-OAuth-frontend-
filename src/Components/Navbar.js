@@ -21,7 +21,7 @@ function Navbar ({ user }) {
         <ul className='list d-flex align-items-center list-unstyled'>
           <li className='listItem text-center pe-4'>
             <PersonCircle className='bootIcon' />
-            {}
+            {user.name}
           </li>
           <li
             className='listItem text-center pe-4'

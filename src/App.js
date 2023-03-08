@@ -21,20 +21,20 @@ function App () {
 
   useEffect(() => {
     const getUser = async () => {
-      const userDetails = {
-        user: {
-          name: localStorage.getItem('NAME'),
-          token: localStorage.getItem('TOKEN')
-        }
-      }
-      setUser(userDetails.user)
-      // try {
-      //   const url = `${process.env.REACT_APP_BASE_URL}/auth/login/success`
-      //   const { data } = await axios.get(url, { withCredentials: true })
-      //   setUser(data.user)
-      // } catch (error) {
-      //   console.log(`Error While login : ${error}`);
+      // const userDetails = {
+      //   user: {
+      //     name: localStorage.getItem('NAME'),
+      //     token: localStorage.getItem('TOKEN')
+      //   }
       // }
+      // setUser(userDetails.user)
+      try {
+        const url = `${process.env.REACT_APP_BASE_URL}/auth/login/success`
+        const { data } = await axios.get(url, { withCredentials: true })
+        setUser(data.user)
+      } catch (error) {
+        console.log(`Error While login : ${error}`);
+      }
     }
     getUser()
   }, [])
@@ -49,8 +49,7 @@ function App () {
           <Route path='/' element={<Home user={user} />} />
           <Route
             path='/login'
-            element={user.name == null ? <Login /> : <Navigate to='/' />}
-            // element={user? <Navigate to='/' /> : <Login />}
+            element={user ? <Navigate to='/' /> : <Login />}
           />
           <Route path='/signup' element={<Signup />} />
           <Route path='/forgetpassword' element={<ForgetPassword />} />
