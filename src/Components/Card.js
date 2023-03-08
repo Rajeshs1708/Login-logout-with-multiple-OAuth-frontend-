@@ -48,10 +48,10 @@ const Card = ({ post }) => {
       </Link>
       <div className='favourite'>
         <button
-          className='btn'
           style={{
             color: "grey",
             cursor: 'pointer',
+            border:"1px solid lightgray"
           }}
           onClick={() => {
             setCount(1)
@@ -61,7 +61,7 @@ const Card = ({ post }) => {
         </button>
         <HeartFill
           style={{
-            color: `${color ? '#E75480' : 'lightgrey'}`,
+            color: `${color ? '#E75480' : 'grey'}`,
             cursor: 'pointer',
           }}
           size={20}
