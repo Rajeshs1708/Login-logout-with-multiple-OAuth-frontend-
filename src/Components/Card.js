@@ -50,18 +50,18 @@ const Card = ({ post }) => {
         <button
           className='btn'
           style={{
-            color: "lightgray",
+            color: "grey",
             cursor: 'pointer',
           }}
           onClick={() => {
-            setCount(count + 1)
+            setCount(1)
           }}
         >
           Like {count}
         </button>
         <HeartFill
           style={{
-            color: `${color ? '#E75480' : 'white'}`,
+            color: `${color ? '#E75480' : 'lightgrey'}`,
             cursor: 'pointer',
           }}
           size={20}
