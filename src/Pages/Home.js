@@ -52,7 +52,7 @@ const Home = ({ user }) => {
       <div className='container-fluid'>
         <div className='row'>
           <p className='h5 text-center'>
-            Welcome : {localStorage.getItem('NAME')}
+            Welcome : {localStorage.getItem('NAME')} !
           </p>
           <button
             className='btn pe-4'
