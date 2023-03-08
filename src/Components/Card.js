@@ -64,7 +64,6 @@ const Card = ({ post }) => {
           style={{
             color: `${color ? '#E75480' : 'white'}`,
             cursor: 'pointer',
-            border: '1px solid gray'
           }}
           size={20}
           onClick={handleChange}
