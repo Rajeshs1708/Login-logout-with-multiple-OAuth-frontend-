@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import './App.css'
-import axios from 'axios'
+// import axios from 'axios'
 import {
   BrowserRouter as Router,
   Routes,
@@ -21,11 +21,11 @@ function App () {
 
   useEffect(() => {
     const getUser = async () => {
-      const userDetails = {
+      const userDetails = {user:{
         name: localStorage.getItem('NAME'),
         token: localStorage.getItem('TOKEN')
-      }
-      setUser(userDetails)
+      }}
+      setUser(userDetails.user)
       // try {
       //   const url = `${process.env.REACT_APP_BASE_URL}/auth/login/success`
       //   const { data } = await axios.get(url, { withCredentials: true })
@@ -47,7 +47,7 @@ function App () {
           <Route path='/' element={<Home user={user} />} />
           <Route
             path='/login'
-            element={user.userDetails.name ? <Navigate to='/' /> : <Login />}
+            element={user? <Navigate to='/' /> : <Login />}
           />
           <Route path='/signup' element={<Signup />} />
           <Route path='/forgetpassword' element={<ForgetPassword />} />
