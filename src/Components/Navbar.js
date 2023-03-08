@@ -1,7 +1,7 @@
 import React from 'react'
 import './Navbar.css'
 import { Link } from 'react-router-dom'
-import { BoxArrowInLeft, SearchHeart } from 'react-bootstrap-icons'
+import { BoxArrowInLeft, PersonCircle, SearchHeart } from 'react-bootstrap-icons'
 
 function Navbar ({ user }) {
   let user2 = {
@@ -20,18 +20,16 @@ function Navbar ({ user }) {
       </span>
       {user || user2 ? (
         <ul className='list d-flex align-items-center list-unstyled'>
-          {/* <li className='listItem text-center pe-4'>
-            <Person />
-            {user.name}
-          </li> */}
+          <li className='listItem text-center pe-4'>
+            <PersonCircle />
+            {user2.name}
+          </li>
           <li
             className='listItem text-center pe-4'
             title='This is for OAuth'
             onClick={logout}
           >
-            <BoxArrowInLeft />
-            Logout
-          </li>
+            <BoxArrowInLeft /> Logout</li>
         </ul>
       ) : (
         <>
