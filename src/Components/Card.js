@@ -48,7 +48,7 @@ const Card = ({ post }) => {
       <div className='favourite'>
         <button className='btn'>Like 0</button>
         <HeartFill
-          style={{ color: `${color ? '#E75480' : ''}`, cursor: 'pointer' }}
+          style={{ color: `${color ? '#E75480' : ''}`, cursor: 'pointer',backgroundColor:"white",border:"1px solid gray" }}
           size={20}
           onClick={handleChange}
         />
