@@ -8,36 +8,43 @@ import {
 } from 'react-bootstrap-icons'
 
 function Navbar ({ user }) {
-  let user2 = {
-    name: localStorage.getItem('NAME'),
-    email: localStorage.getItem('NAME'),
-    token: localStorage.getItem('NAME')
-  }
+  let user2 = localStorage.getItem('NAME')
+
   const logout = () => {
-    window.open(`${process.env.REACT_APP_BASE_URL}/auth/logout`, '_self')
-    try {
-      axios
-        .get(`${process.env.REACT_APP_BASE_URL}/api/signout`)
-        .then(res => {
-          if (res) {
-            const notify = () =>
-              toast.success(`*${res.data.message}*`, { theme: 'colored' })
-            notify()
-            localStorage.removeItem('TOKEN')
-            localStorage.removeItem('NAME')
-            localStorage.removeItem('EMAIL')
-            setTimeout(() => {
-              navigate('/login')
-            }, 1000)
+    {
+      user
+        ? window.open(`${process.env.REACT_APP_BASE_URL}/auth/logout`, '_self')
+        : function handleLogout () {
+            try {
+              axios
+                .get(`${process.env.REACT_APP_BASE_URL}/api/signout`)
+                .then(res => {
+                  if (res) {
+                    const notify = () =>
+                      toast.success(`*${res.data.message}*`, {
+                        theme: 'colored'
+                      })
+                    notify()
+                    localStorage.removeItem('TOKEN')
+                    localStorage.removeItem('NAME')
+                    localStorage.removeItem('EMAIL')
+                    setTimeout(() => {
+                      navigate('/login')
+                    }, 1000)
+                  }
+                })
+                .catch(err => {
+                  const notify = () =>
+                    toast.error(`*${err.response.data.message}*`, {
+                      theme: 'colored'
+                    })
+                  notify()
+                })
+            } catch (err) {
+              console.log('Error...', err)
+            }
           }
-        })
-        .catch(err => {
-          const notify = () =>
-            toast.error(`*${err.response.data.message}*`, { theme: 'colored' })
-          notify()
-        })
-    } catch (err) {
-      console.log('Error...', err)
+      handleLogout()
     }
   }
 
@@ -46,7 +53,7 @@ function Navbar ({ user }) {
       <span className='logo'>
         Find Articles <SearchHeart className='searchIcon' />
       </span>
-      {user && user2 ? (
+      {user || user2 ? (
         <ul className='list d-flex align-items-center list-unstyled'>
           <li className='listItem text-center pe-4'>
             <PersonCircle className='bootIcon' />

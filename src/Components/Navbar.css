@@ -1,36 +1,32 @@
 .navbar {
-    height: auto;
-    background-color: #975C8D;
+  height: auto;
+  background-color: #975c8d;
 }
-.navbar .searchIcon:hover{
-    font-size: 25px;
-    color: #9cb2ba;
+.navbar .searchIcon:hover {
+  font-size: 25px;
+  color: #9cb2ba;
 }
 .logo {
-    font-size: 23px;
-    font-weight: bold;
+  font-size: 23px;
+  font-weight: bold;
 }
-.bootIcon{
-    padding-right: 10px;
-    align-self: auto;
-}
-.navbar .bootIcon:hover{
-    font-size: 25px;
-    color: #9cb2ba;
+.bootIcon {
+  padding-right: 10px;
+  align-self: auto;
 }
 .link {
-    color: inherit;
-    text-decoration: none;
+  color: inherit;
+  text-decoration: none;
 }
 
 .listItem {
-    cursor: pointer;
-    font-weight: bold;
+  cursor: pointer;
+  font-weight: bold;
 }
 
 .avatar {
-    height: 40px;
-    width: 40px;
-    border-radius: 50%;
-    object-fit: cover;
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  object-fit: cover;
 }
