@@ -1,7 +1,7 @@
 import React from 'react'
 import './Navbar.css'
 import { Link } from 'react-router-dom'
-import { BoxArrowLeft, Person, SearchHeart } from 'react-bootstrap-icons'
+import { BoxArrowInLeft, SearchHeart } from 'react-bootstrap-icons'
 
 function Navbar ({ user }) {
   let user2 = {
@@ -29,7 +29,7 @@ function Navbar ({ user }) {
             title='This is for OAuth'
             onClick={logout}
           >
-            <BoxArrowLeft />
+            <BoxArrowInLeft />
             Logout
           </li>
         </ul>
